@@ -10,9 +10,9 @@
 		houseInfo = document.querySelector(".house-info"),
 		pauseButton = document.querySelector(".fa-pause"),
 		playButton = document.querySelector(".fa-play"),
+		resetVid = document.querySelector(".reset"),
 		videoProgress = document.querySelector("#length"),
-		// resetVid = document.querySelector("#reset")
- 		setVolume = document.querySelector("#volume");
+		setVolume = document.querySelector("#volume");
 
 		// console.log(setVolume);
 		console.log(videoProgress);
@@ -50,6 +50,11 @@ function playVideo(){
 	houseVideo.play();
 }
 
+ function onReset(){
+ 	houseVideo.load();
+	houseVideo.play();
+}
+
 
 
 houseVideo.addEventListener('timeupdate', function(event){
@@ -61,9 +66,9 @@ setVolume.addEventListener('change', function(event){
 	houseVideo.volume = event.currentTarget.value / 100;
 });
 
-   resetVid.addEventListener('reset',function(event){
-  	videoProgress.currentTime = 0;
-  })
+  //  // resetVid.addEventListener('reset',function(event){
+  // 	// videoProgress.currentTime = 0;
+  // })
 
 debugger;
 //write the other functions for the custom video controls (play, volume, control, time counter, progress bar scrubber etc.)//
@@ -71,6 +76,7 @@ debugger;
 	function popLightBox() {
 
 		lightBox.classList.add('show-lightbox');
+
 
 
 //get the classname property, split it into its seperate words (an array), and
@@ -89,6 +95,9 @@ debugger;
 	}
 
 	function closeLightBox(event) {
+		event.preventDefault();
+
+
 	// event.preventDefault();
 
 
@@ -96,7 +105,7 @@ debugger;
 	lightBox.classList.remove('show-lightbox');
 	houseVideo.currentTime = 0;//Rewinds video.
 	houseVideo.pause();
-	houseVideo.play();
+
 }
 
 function animateBanners(){
@@ -120,11 +129,13 @@ houseInfo.textContent = houseData[multiplier][1];
 	//sigils.forEach(sigil => sigil.addEventListener("click", popLightBox));
 
 	sigils.forEach(sigil => sigil.addEventListener("click", popLightBox));
+	sigils.forEach(sigil => sigil.addEventListener("click", animateBanners));
 
 	closeButton.addEventListener("click", closeLightBox);
 	houseVideo.addEventListener('ended', closeLightBox);
 	pauseButton.addEventListener("click", pauseVideo);
 	playButton.addEventListener("click", playVideo);
+	resetVid.addEventListener("click", onReset);
 	setVolume.addEventListener("drag", setVolume);
 
 })();

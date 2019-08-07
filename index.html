@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DOM Traversal</title>
+<title>Game of Thrones Video App</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 <link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
@@ -19,6 +19,8 @@
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
+        <!-- <img src="images/targaryen.jpg"/>
+    		<img src="images/frey.jpg"/> -->
         </div>
     </section>
 
@@ -31,10 +33,13 @@
             <li><div class="sigilContainer tully" data-offset="3"></div></li>
             <li><div class="sigilContainer greyjoy" data-offset="4"></div></li>
             <li><div class="sigilContainer arryn" data-offset="5"></div></li>
+            <!-- <li><div class="sigilContainer targaryen" data-offset="6"></div></li>
+            <li><div class="sigilContainer frey" data-offset="7"></div></li> -->
+
         </ul>
     </nav>
 
-    <h1 id="house-name">clever tagline goes here</h1><!-- replace this with the house name -->
+    <h1 id="house-name">Which House Will You Choose?</h1><!-- replace this with the house name -->
 
     <p class="house-info"></p><!-- replace this with house details (github gist) -->
 
@@ -49,7 +54,7 @@
           <i class="fas fa-pause"></i>
           <!-- <progress id="length" value="0"></progress> -->
           <input id="volume" type="range" value="50"></input>
-          <button id="reset" type="reset">Restart</button>
+          <button id="reset" class="reset">Restart</button>
         </section>
 
           <progress id="length" value="0"></progress>
