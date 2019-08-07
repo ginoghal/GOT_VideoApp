@@ -1,2 +1,3 @@
-<code><span style="display:block;line-height:8px; font-size: 8px; font-weight:bold;white-space:pre;font-family: monospace;color: black; background: white;">                                                                                                                                                               
-                                            
+GAME OF THRONES VIDEO APP
+
+by Gino Ghalehpardaz
